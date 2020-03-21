@@ -1,0 +1,39 @@
+h6.MuiTypography-root a {
+	color:white;
+		text-decoration: none;
+
+}
+
+
+h6.MuiTypography-root a:hover{
+	color:red;
+}
+.title {
+	flex-grow: 1;
+}
+
+.navBar {
+	flex-grow: 1;
+}
+svg.MuiSvgIcon-root:hover{
+	color:red;
+	cursor: pointer;
+}
+
+svg.MuiSvgIcon-root {
+	font-size:30px;
+}
+
+.item-img {
+	max-height:70px;
+	max-width: 300px;
+}
+
+span.MuiButton-label a:hover {
+	color:red;
+			text-decoration: none;
+
+
+
+
+}

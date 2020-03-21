@@ -1,0 +1,33 @@
+{
+  "products": [{
+      "id": "1",
+      "name": "Iphone 6",
+      "image": "images/iphone6.png",
+      "price": "200.99",
+      "description": "16 GB"
+    },
+    {
+      "id": "2",
+      "name": "Iphone X",
+      "image": "images/iphonex.jpg",
+      "price": "500.99",
+      "description": "64 GB"
+    },
+    {
+      "id": "3",
+      "name": "Iphone 11",
+      "image": "images/iphone11.jpg",
+      "price": "750.00",
+      "description": "128 GB"
+    },
+    {
+      "id": "4",
+      "name": "Iphone 11 Pro Max",
+      "image": "images/iphone11promax.jpg",
+      "price": "999",
+      "colors": ["blue"],
+      "condition": "Fresh",
+      "description": "512 GB"
+    }
+  ]
+}

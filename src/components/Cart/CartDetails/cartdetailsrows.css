@@ -1,0 +1,29 @@
+
+
+ a {
+	text-decoration: none;
+	color:white;
+}
+a:hover{
+	color:red;
+}
+.title {
+	flex-grow: 1;
+}
+
+.navBar {
+	flex-grow: 1;
+}
+svg.MuiSvgIcon-root:hover{
+	color:red;
+	cursor: pointer;
+}
+
+svg.MuiSvgIcon-root {
+	font-size:30px;
+}
+
+.item-img {
+	max-height:70px;
+	max-width: 300px;
+}
