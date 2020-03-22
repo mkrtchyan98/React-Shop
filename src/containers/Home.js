@@ -4,14 +4,15 @@ import * as productActions from '../components/actions/CartActions';
 import ProductDisplay from '../components/Product/ProductDisplay';
 import {bindActionCreators} from 'redux';
 import { Grid } from '@material-ui/core';
-
+import CompareProducts from '../components/CompareProducts';
 class Home extends Component {
   componentDidMount() {
     this.props.actions.getProducts()//can use this.props.dispatch(getProducts()) instead of bindActionCreators
   }
 
   render() {
-    const {products} = this.props;
+    const {products,actions} = this.props;
+    const compareProducts = products.filter(product => product.compare);
     return (
 <Grid
   container
@@ -27,9 +28,13 @@ class Home extends Component {
         <Grid item sm={12} xs={12}>
 
 
-        <ProductDisplay products={products} addToCart={this.props.actions.addToCart} />
-</Grid>
+        <ProductDisplay products={products} addToCart={actions.addToCart} compare={actions.compare} />
+         {compareProducts.length >= 2 &&
+          <CompareProducts products={compareProducts}/>
+        }
       </Grid>
+</Grid>
+      
     )
   }
 }

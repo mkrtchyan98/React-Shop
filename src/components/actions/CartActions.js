@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS,ADD_TO_CART,ADD_QUANTITY,SUB_QUANTITY,REMOVE_ITEM} from './CartActionTypes/ActionTypes';
+import {FETCH_PRODUCTS,ADD_TO_CART,ADD_QUANTITY,SUB_QUANTITY,REMOVE_ITEM,COMPARE_PRODUCT} from './CartActionTypes/ActionTypes';
 
 export const getProducts = () => 
 dispatch =>
@@ -10,6 +10,7 @@ fetch('products.json')
 		payload:response.products,
 	})
 })
+
 
 export const addToCart = (id) =>( {
         type: ADD_TO_CART,
@@ -34,3 +35,7 @@ export const subQuantity = (id) => ({
 	id
 })
 
+export const compare = (product) => ({
+	type:COMPARE_PRODUCT,
+	product
+})

@@ -8,18 +8,45 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme =>({
 	root: {
 		maxWidth: 300,
-
+'& button:focus':{
+  outline:0,
 	},
+  '& h2' :{
+      fontSize:'1.125rem'
+    },
+     '& span' :{
+      fontSize:'1.125rem'
+    },
+     '& button:hover' :{
+      color:'red'
+    },
+   [theme.breakpoints.down('sm')]: {
+    '& img' :{
+      maxHeight:'140px',
+      maxWidth:'130px',
+    },
+    '& h2' :{
+      fontSize:'.725rem'
+    },
+    '& span' :{
+      fontSize:'.725rem'
+    },
+    '& div' :{
+      maxWidth:'150px'
+    }
+    },
+}
 
-});
+
+}));
 
 
 
 
- function ProductRow({product,addToCart}) {
+ function ProductRow({product,addToCart,compare}) {
 const classes = useStyles();
 
 return(
@@ -47,6 +74,9 @@ return(
                           <IconButton color="primary" aria-label="add to shopping cart" onClick={()=> addToCart(product.id)}>
                                         <AddShoppingCartIcon />
                 					 </IconButton>
+                             <IconButton color="primary" aria-label="compare products" onClick={()=> compare(product)} >
+                                          {product.compare ? "REMOVE" : "COMPARE"}
+                           </IconButton>
             				</CardActions>					
             				</Card>
           );

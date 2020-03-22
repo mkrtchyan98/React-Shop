@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS,ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY,REMOVE_ITEM} from '../actions/CartActionTypes/ActionTypes'
+import {FETCH_PRODUCTS,ADD_TO_CART,SUB_QUANTITY,ADD_QUANTITY,REMOVE_ITEM,COMPARE_PRODUCT} from '../actions/CartActionTypes/ActionTypes'
 
 const initState = {
     products: [],
@@ -10,8 +10,10 @@ const initState = {
     switch(action.type) {
         case FETCH_PRODUCTS:
         return {
-            ...state,products: [...action.payload]
-        };
+            ...state,products:action.payload.map(product =>
+                ({...product,compare:false})
+                )}
+        
         case ADD_TO_CART:{
                  let addedItem = state.products.find(item=> item.id === action.id)
                   //check if the action id exists in the addedItems
@@ -86,8 +88,17 @@ const initState = {
                  }
          }
 
-        
+        case  COMPARE_PRODUCT: {
+            return {
+            ...state,products:state.products.map(product => 
+                product.id === action.product.id ?
+                ({...product,compare: !product.compare})
+                : product
+                )
+    }
+ } 
          
+
 
                 default:
         return state || initState
